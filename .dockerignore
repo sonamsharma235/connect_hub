@@ -1,0 +1,12 @@
+.git
+.gitignore
+.m2
+.tmp-frontend
+.env
+
+**/target
+**/.classpath
+**/.project
+**/.settings
+**/*.iml
+**/.idea

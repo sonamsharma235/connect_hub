@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:}
+            client-secret: ${GOOGLE_CLIENT_SECRET:}
+            # Force a stable redirect URI (helps when behind API Gateway / hostnames differ).
+            # Override via env var if needed (e.g., http://Sonam:8081/login/oauth2/code/google).
+            redirect-uri: ${OAUTH2_REDIRECT_URI:http://localhost:8080/login/oauth2/code/google}
+            scope:
+              - openid
+              - profile
+              - email

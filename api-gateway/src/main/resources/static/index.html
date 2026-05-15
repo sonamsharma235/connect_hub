@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConnectHub Chat</title>
+    <link rel="stylesheet" href="/app.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title">ConnectHub</div>
+          <div class="brand__subtitle">One-page chat</div>
+        </div>
+        <div class="status" id="status">Disconnected</div>
+      </header>
+
+      <section class="controls">
+        <label class="field">
+          <span>Room code</span>
+          <input id="roomCode" placeholder="e.g. ABC123" autocomplete="off" />
+        </label>
+        <label class="field field--grow">
+          <span>JWT token</span>
+          <input
+            id="token"
+            placeholder="Paste Bearer token value (without 'Bearer ')"
+            autocomplete="off"
+          />
+        </label>
+        <div class="buttons">
+          <button id="connectBtn" class="btn btn--primary" type="button">Connect</button>
+          <button id="disconnectBtn" class="btn" type="button" disabled>Disconnect</button>
+          <button id="leaveBtn" class="btn" type="button" disabled>Leave room</button>
+          <button id="deleteBtn" class="btn btn--danger" type="button" hidden>Delete room</button>
+        </div>
+      </section>
+
+      <section class="rooms">
+        <div class="rooms__panel">
+          <div class="rooms__header">
+            <h2 class="rooms__title">Rooms</h2>
+            <button id="refreshRoomsBtn" class="btn" type="button">Refresh</button>
+          </div>
+
+          <div class="rooms__form">
+            <label class="field field--grow">
+              <span>Room name</span>
+              <input id="roomName" placeholder="e.g. General" autocomplete="off" />
+            </label>
+            <label class="field field--grow">
+              <span>Description (optional)</span>
+              <input id="roomDesc" placeholder="Short description" autocomplete="off" />
+            </label>
+            <label class="field field--grow">
+              <span>Room id (optional)</span>
+              <input id="roomId" placeholder="e.g. general-chat" autocomplete="off" />
+            </label>
+
+            <div class="rooms__actions">
+              <button id="createRoomBtn" class="btn btn--primary" type="button">Create room</button>
+              <div id="createRoomNotice" class="notice notice--inline"></div>
+            </div>
+          </div>
+
+          <div class="rooms__divider"></div>
+          <div id="roomsNotice" class="notice">Paste your JWT token to load rooms.</div>
+          <div id="roomsList" class="rooms__list" aria-label="Room list"></div>
+        </div>
+      </section>
+
+      <main class="chat">
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <div class="composer">
+          <textarea
+            id="messageInput"
+            placeholder="Type a message…"
+            rows="1"
+            maxlength="2000"
+          ></textarea>
+          <button id="sendBtn" class="btn btn--primary" type="button" disabled>Send</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

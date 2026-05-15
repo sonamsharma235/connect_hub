@@ -1,0 +1,27 @@
+.idea/
+.vscode/
+
+# Build output
+target/
+**/target/
+*.log
+hs_err_pid*
+
+# Local caches
+.m2/
+.mvn/apache-maven-*/
+
+# Secrets / env files (keep example committed)
+.env
+.env.*
+!.env.example
+
+# Local-only Spring config overrides
+**/application-local.yml
+**/application-local.yaml
+**/application-*.local.yml
+**/application-*.local.yaml
+
+# OS files
+.DS_Store
+Thumbs.db

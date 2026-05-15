@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS connecthub_authDB;
+CREATE DATABASE IF NOT EXISTS connecthub_roomDB;
+CREATE DATABASE IF NOT EXISTS connecthub_messageDB;
+CREATE DATABASE IF NOT EXISTS connecthub_notificationDB;
